@@ -42,6 +42,7 @@ class Solution(object):
         # the parent node is the parent of the node to be removed    
         if ptr1 != head:
             par.next = (ptr1.next)
+        # if it is the head node that has to be removed, move the head to the next node
         else:
             head = ptr1.next
         return head
