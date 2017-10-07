@@ -15,6 +15,7 @@ class Solution(object):
         :type n: int
         :rtype: ListNode
         """
+        # create two pointers and separate them at a distance of n
         ptr1 = head
 
         if n == 1 and head.next == None:
@@ -31,12 +32,14 @@ class Solution(object):
         while count !=n:
             ptr2 = ptr2.next
             count = count+1
-            
+
+        # maintain the distance till the second pointer reaches the end of the list   
         while ptr2.next!= None:
             ptr2 = ptr2.next
             par = ptr1
             ptr1 = ptr1.next
 
+        # the parent node is the parent of the node to be removed    
         if ptr1 != head:
             par.next = (ptr1.next)
         else:
